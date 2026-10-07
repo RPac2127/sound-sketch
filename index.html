@@ -1,0 +1,91 @@
+<body></body>
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
+<script>
+  
+  let base = 'https://storage.googleapis.com/cdn.patatap.com/'
+
+
+  //how to chnage <body> element 
+ nn.get('body').content('hello world')
+   .css('background', 'green')
+   .css('margin', 0)
+   .css('font-size', 100)
+   .css('position', 'absolute').css('left', 100).css ('top', 150) 
+  
+  clay = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', base + 'A/' + 'clay.mp3')
+    .set('preload', 'auto')
+  
+  clay2 = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', base + 'B/' + 'clay.mp3')
+    .set('preload', 'auto')
+  
+  
+   moon = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', base + 'A/' + 'moon.mp3')
+  
+  moon2 = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', base + 'F/' + 'moon.mp3')
+  
+  
+  
+  let files = [
+    'bubbles.mp3',
+    'clay.mp3',
+    'confetti.mp3',
+    'corona.mp3',
+    'dotted-spiral.mp3',
+    'flash-1.mp3',
+    'flash-2.mp3',
+    'flash-3.mp3',
+    'glimmer.mp3',
+    'moon.mp3',
+    'pinwheel.mp3',
+    'piston-1.mp3',
+    'piston-2.mp3',
+    'piston-3.mp3',
+    'prism-1.mp3',
+    'prism-2.mp3',
+    'prism-3.mp3',
+    'splits.mp3',
+    'squiggle.mp3',
+    'strike.mp3',
+    'suspension.mp3',
+    'timer.mp3',
+    'ufo.mp3',
+    'veil.mp3',
+    'wipe.mp3',
+    'zig-zag.mp3'
+  ]
+  
+  
+  
+  function play (e) {
+   if (e.key === 'q'){
+    clay.currentTime= 0
+    clay.play()
+   }
+  if (e.key === 'w'){
+    clay2.currentTime= 0
+    clay2.play()
+  }
+  if (e.key === 'e'){
+    moon.currentTime= 0
+    moon.play()
+  }
+     if (e.key === 'r'){
+    moon2.currentTime= 0
+    moon2.play()
+  }
+  }
+  
+  nn.on('keydown', play)
+</script>
