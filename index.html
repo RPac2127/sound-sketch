@@ -35,6 +35,13 @@
     .set('controls', true)
     .set('src', base + 'F/' + 'moon.mp3')
   
+   sus = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'https://raw.githubusercontent.com/RPac2127/sound-sketch/main/sus.mp3')
+    .set('preload', 'auto')
+  
+  
   
   
   let files = [
@@ -84,6 +91,10 @@
      if (e.key === 'r'){
     moon2.currentTime= 0
     moon2.play()
+  }
+     if (e.key === '1'){
+    sus.currentTime= 0
+    sus.play()
   }
   }
   
