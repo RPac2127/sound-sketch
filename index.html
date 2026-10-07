@@ -33,7 +33,7 @@
   moon2 = nn.create('audio')
     .addTo('body')
     .set('controls', true)
-    .set('src', base + 'F/' + 'moon.mp3')
+    .set('src', base + 'B/' + 'moon.mp3')
   
    sus = nn.create('audio')
     .addTo('body')
@@ -41,6 +41,10 @@
     .set('src', 'https://raw.githubusercontent.com/RPac2127/sound-sketch/main/sus.mp3')
     .set('preload', 'auto')
   
+  glimmer = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', base + 'A/' + 'glimmer.mp3')
   
   
   
@@ -95,6 +99,10 @@
      if (e.key === '1'){
     sus.currentTime= 0
     sus.play()
+  }
+      if (e.key === 't'){
+    glimmer.currentTime= 0
+    glimmer.play()
   }
   }
   
