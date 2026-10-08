@@ -4,47 +4,66 @@
   
   let base = 'https://storage.googleapis.com/cdn.patatap.com/'
 
+  nn.get('body')
+    .css('background', "green")
 
-  //how to chnage <body> element 
- nn.get('body').content('hello world')
-   .css('background', 'green')
-   .css('margin', 0)
-   .css('font-size', 100)
-   .css('position', 'absolute').css('left', 100).css ('top', 150) 
-  
   clay = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'A/' + 'clay.mp3')
     .set('preload', 'auto')
+    .set('style', 'display:none')
   
   clay2 = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'B/' + 'clay.mp3')
     .set('preload', 'auto')
+    .set('style', 'display:none')
   
   
    moon = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'A/' + 'moon.mp3')
+    .set('style', 'display:none')
   
   moon2 = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'B/' + 'moon.mp3')
+    .set('style', 'display:none')
   
    sus = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', 'https://raw.githubusercontent.com/RPac2127/sound-sketch/main/sus.mp3')
     .set('preload', 'auto')
+    .set('style', 'display:none')
   
   glimmer = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'A/' + 'glimmer.mp3')
+    .set('style', 'display:none')
+  
+  fah = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'fah.mp3')
+    .set('style', 'display:none')
+  
+  function text(e){
+    if (e.key === 'f'){
+    let x = nn.random(nn.width)
+    let y = nn.random(nn.height)
+    nn.create('h1')
+      .content('FAH')
+      .addTo('body')
+      .position(x, y)
+      .css('user-select', 'none')
+    }
+  }
   
   
   
@@ -104,7 +123,12 @@
     glimmer.currentTime= 0
     glimmer.play()
   }
+     if (e.key === 'f'){
+    fah.currentTime= 0
+    fah.play()
+      }
   }
   
   nn.on('keydown', play)
+  nn.on('keydown', text)
 </script>
