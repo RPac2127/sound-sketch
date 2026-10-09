@@ -65,6 +65,18 @@
     }
   }
   
+  function text(e){
+    if (e.key === 's'){
+    let x = nn.random(nn.width)
+    let y = nn.random(nn.height)
+    nn.create('img')
+      .set('src, sus cat.jpg')
+      .addTo('body')
+      .position(x, y)
+      .set('width', 200)
+      .css('user-select', 'none')
+    }
+  }
   
   
   let files = [
