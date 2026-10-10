@@ -91,10 +91,7 @@
 
       let x = nn.random(nn.width)
       let y = nn.random(nn.height)
-      nn.create('h1')
-        .content('FAH')
-        .addTo('body')
-        .position(x, y)
+      
         .css('user-select', 'none')
     }
   }
@@ -324,6 +321,12 @@
       dance_sequence = [positions[1], positions[11], positions[2]]
       setup_frames()
       start_animation()
+      setTimeout(() => {
+        nn.create('h1')
+        .content('Spooky Scary Skeleton')
+        .addTo('body')
+        .position(250, 250)
+      }, 7500);
   }
     if (e.key === '2'){
       stop_animation()
