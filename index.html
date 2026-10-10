@@ -58,6 +58,31 @@
     .set('src', 'spooky.mp3')
     .set('style', 'display:none')
 
+  bb = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'bb.mp3')
+    .set('style', 'display:none')
+
+  aol = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'aol.mp3')
+    .set('style', 'display:none')
+  
+  brightside = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'brightside.mp3')
+    .set('style', 'display:none')
+  
+  edm = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'edm.mp3')
+    .set('style', 'display:none')
+
+
 
   let current = null
 
@@ -222,8 +247,8 @@
       y: 300
     },
     {
-      x: 300,
-      y: 300
+      x: 250,
+      y: 250
     },
     {
       x: 300,
@@ -307,6 +332,27 @@
       setup_frames()
       start_animation()
     }
+    if (e.key === '3'){
+      stop_animation()
+      frames = [skeleton5, skeleton1, skeleton9]
+      dance_sequence = [positions[4], positions[0], positions[8]]
+      setup_frames()
+      start_animation()
+    }
+    if (e.key === '4'){
+      stop_animation()
+      frames = [skeleton7, skeleton1, skeleton8]
+      dance_sequence = [positions[6], positions[0], positions[7]]
+      setup_frames()
+      start_animation()
+    }
+    if (e.key === '5'){
+      stop_animation()
+      frames = [skeleton1, skeleton10, skeleton11]
+      dance_sequence = [positions[0], positions[9], positions[10]]
+      setup_frames()
+      start_animation()
+    }
   }
 
 
@@ -316,7 +362,7 @@
 
   
 
-const sounds = [spooky]   
+const sounds = [spooky, brightside, aol, bb, edm]   
 
   
 function stop_all_sounds() {
@@ -330,8 +376,12 @@ nn.on('keydown', e => {
   if (e.key === 'h') stop_all_sounds()
 })
   
+  const sound_keys = ['1', '2', '3', '4', '5']
   
   function play (e) {
+    if (e.repeat) return
+    if (sound_keys.includes(e.key)) stop_all_sounds()
+    
     if (e.key === 'q') {
       clay.currentTime = 0
       clay.play()
@@ -364,10 +414,25 @@ nn.on('keydown', e => {
       spooky.currentTime = 0
       spooky.play()
     }
+    if (e.key === '2') {
+      brightside.currentTime = 0
+      brightside.play()
+    }
+    if (e.key === '3') {
+      aol.currentTime = 0
+      aol.play()
+    }
+    if (e.key === '4') {
+      bb.currentTime = 0
+      bb.play()
+    }
+    if (e.key === '5') {
+      edm.currentTime = 0
+      edm.play()
+    }
   }
 
   nn.on('keydown', play)
   nn.on('keydown', fah_text)
   nn.on('keydown', au)
-  nn.on('keydown', show_skeleton)
 </script>
