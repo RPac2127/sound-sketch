@@ -1,7 +1,6 @@
 <body></body>
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
 <script>
-  
   let base = 'https://storage.googleapis.com/cdn.patatap.com/'
 
   nn.get('body')
@@ -13,175 +12,362 @@
     .set('src', base + 'A/' + 'clay.mp3')
     .set('preload', 'auto')
     .set('style', 'display:none')
-  
+
   clay2 = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'B/' + 'clay.mp3')
     .set('preload', 'auto')
     .set('style', 'display:none')
-  
-  
-   moon = nn.create('audio')
+
+
+  moon = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'A/' + 'moon.mp3')
     .set('style', 'display:none')
-  
+
   moon2 = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'B/' + 'moon.mp3')
     .set('style', 'display:none')
-  
-   sus = nn.create('audio')
+
+  sus = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', 'https://raw.githubusercontent.com/RPac2127/sound-sketch/main/sus.mp3')
     .set('preload', 'auto')
     .set('style', 'display:none')
-  
+
   glimmer = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', base + 'A/' + 'glimmer.mp3')
     .set('style', 'display:none')
-  
+
   fah = nn.create('audio')
     .addTo('body')
     .set('controls', true)
     .set('src', 'fah.mp3')
     .set('style', 'display:none')
-  
+
+  spooky = nn.create('audio')
+    .addTo('body')
+    .set('controls', true)
+    .set('src', 'spooky.mp3')
+    .set('style', 'display:none')
+
+
   let current = null
-  
-  function fah_text (e){
-    if (e.key === 'f'){
-     
-    let x = nn.random(nn.width)
-    let y = nn.random(nn.height)
-     nn.create('h1')
-      .content('FAH')
-      .addTo('body')
-      .position(x, y)
-      .css('user-select', 'none')
+
+  function fah_text (e) {
+    if (e.key === 'f') {
+
+      let x = nn.random(nn.width)
+      let y = nn.random(nn.height)
+      nn.create('h1')
+        .content('FAH')
+        .addTo('body')
+        .position(x, y)
+        .css('user-select', 'none')
     }
   }
-  
-  function au(e){
-    if (e.key === 's'){
-    if (current) current.remove() 
-      
-    let xr = nn.random(nn.width)
-    let yr = nn.random(nn.height)
-    current = nn.create('img')
-      .set('src', 'amongus.png')
-      .addTo('body')
-      .position(xr, yr)
-      .set('width', 200)
+
+  function au (e) {
+    if (e.key === 's') {
+      if (current) current.remove()
+
+      let xr = nn.random(nn.width)
+      let yr = nn.random(nn.height)
+      current = nn.create('img')
+        .set('src', 'amongus.png')
+        .addTo('body')
+        .position(xr, yr)
+        .set('width', 200)
     }
   }
-  
+
+  const w = 200
+  const h = 300
+
+
+  const skeleton1 = nn.create('img')
+    .set('src', 'skeleton1.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton2 = nn.create('img')
+    .set('src', 'skeleton2.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton3 = nn.create('img')
+    .set('src', 'skeleton3.png')
+    .addTo('body')
+    .set('width', 280)
+    .set('height', 380)
+    .css('display', 'none')
+
+  const skeleton4 = nn.create('img')
+    .set('src', 'skeleton4.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton5 = nn.create('img')
+    .set('src', 'skeleton5.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton6 = nn.create('img')
+    .set('src', 'skeleton6.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton7 = nn.create('img')
+    .set('src', 'skeleton7.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton8 = nn.create('img')
+    .set('src', 'skeleton8.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton9 = nn.create('img')
+    .set('src', 'skeleton9.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+  const skeleton10 = nn.create('img')
+    .set('src', 'skeleton10.png')
+    .addTo('body')
+    .set('width', 150)
+    .set('height', 250)
+    .css('display', 'none')
+
+  const skeleton11 = nn.create('img')
+    .set('src', 'skeleton11.png')
+    .addTo('body')
+    .set('width', 300)
+    .set('height', 400)
+    .css('display', 'none')
+
+  const skeleton12 = nn.create('img')
+    .set('src', 'skeleton12.png')
+    .addTo('body')
+    .set('width', w)
+    .set('height', h)
+    .css('display', 'none')
+
+
+
+
+
+  let frames = []
+  const positions = [{
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 250,
+      y: 250
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    },
+    {
+      x: 300,
+      y: 300
+    }
+  ]
+
+  const timing = {
+    duration: 700,
+    iterations: Infinity
+  }
+
+  let anims = []
+
+  function setup_frames () {
+    frames.forEach((skel, i) => {
+      skel.css('position', 'absolute')
+      skel.css('left', dance_sequence[i].x + 'px')
+      skel.css('top', dance_sequence[i].y + 'px')
+      skel.css('display', 'none')
+    })
+  }
+
+  function start_animation () {
+    if (anims.length > 0) return
+
+    frames.forEach((skel, i) => {
+      const start = i / frames.length
+      const end = (i + 1) / frames.length
+
+      skel.css('display', 'block')
+
+      const keyframes = [{
+          visibility: 'hidden',
+          offset: 0
+        },
+        {
+          visibility: 'hidden',
+          offset: start
+        },
+        {
+          visibility: 'visible',
+          offset: start
+        },
+        {
+          visibility: 'visible',
+          offset: end
+        },
+        {
+          visibility: 'hidden',
+          offset: end
+        },
+        {
+          visibility: 'hidden',
+          offset: 1
+        }
+      ]
+
+      anims.push(skel.animate(keyframes, timing))
+    })
+  }
+
+  function stop_animation () {
+    anims.forEach(a => a.cancel())
+    anims = []
+    frames.forEach(skel => skel.css('display', 'none'))
+  }
+
+  function on_key (e) {
+    if (e.key === '1'){
+      stop_animation()
+      frames = [skeleton2, skeleton12, skeleton3]
+      dance_sequence = [positions[1], positions[11], positions[2]]
+      setup_frames()
+      start_animation()
+  }
+    if (e.key === '2'){
+      stop_animation()
+      frames = [skeleton4, skeleton1, skeleton6]
+      dance_sequence = [positions[3], positions[0], positions[5]]
+      setup_frames()
+      start_animation()
+    }
+  }
+
+
+  nn.on('keydown', on_key)
+
+
 
   
-  function skeleton1 (e){
-    if (e.key === '1'){
-    let xs1 = nn.random(nn.width)
-    let ys1 = nn.random(nn.height)
-    nn.create('img')
-      .set('src', 'skeleton1')
-      .addTo('body')
-      .position(xs1, ys1)
-      .set('width', 200)
-    }
-  }
+
+const sounds = [spooky]   
+
   
-   nn.create('img')
-      .set('src', 'skeleton1')
-      .addTo('body')
-      .position(xs1, ys1)
-      .set('width', 200)
-  
-   function skeleton2 (e){
-    if (e.key === '2'){
-    let xs2 = nn.random(nn.width)
-    let ys2 = nn.random(nn.height)
-    nn.create('img')
-      .set('src', 'skeleton2')
-      .addTo('body')
-      .position(xs2, ys2)
-      .set('width', 200)
-    }
-  }
-  
-  
-  let files = [
-    'bubbles.mp3',
-    'clay.mp3',
-    'confetti.mp3',
-    'corona.mp3',
-    'dotted-spiral.mp3',
-    'flash-1.mp3',
-    'flash-2.mp3',
-    'flash-3.mp3',
-    'glimmer.mp3',
-    'moon.mp3',
-    'pinwheel.mp3',
-    'piston-1.mp3',
-    'piston-2.mp3',
-    'piston-3.mp3',
-    'prism-1.mp3',
-    'prism-2.mp3',
-    'prism-3.mp3',
-    'splits.mp3',
-    'squiggle.mp3',
-    'strike.mp3',
-    'suspension.mp3',
-    'timer.mp3',
-    'ufo.mp3',
-    'veil.mp3',
-    'wipe.mp3',
-    'zig-zag.mp3'
-  ]
-  
+function stop_all_sounds() {
+  sounds.forEach(s => {
+    s.pause()
+    s.currentTime = 0
+  })
+}
+
+nn.on('keydown', e => {
+  if (e.key === 'h') stop_all_sounds()
+})
   
   
   function play (e) {
-   if (e.key === 'q'){
-    clay.currentTime= 0
-    clay.play()
-   }
-  if (e.key === 'w'){
-    clay2.currentTime= 0
-    clay2.play()
+    if (e.key === 'q') {
+      clay.currentTime = 0
+      clay.play()
+    }
+    if (e.key === 'w') {
+      clay2.currentTime = 0
+      clay2.play()
+    }
+    if (e.key === 'e') {
+      moon.currentTime = 0
+      moon.play()
+    }
+    if (e.key === 'r') {
+      moon2.currentTime = 0
+      moon2.play()
+    }
+    if (e.key === 's') {
+      sus.currentTime = 0
+      sus.play()
+    }
+    if (e.key === 't') {
+      glimmer.currentTime = 0
+      glimmer.play()
+    }
+    if (e.key === 'f') {
+      fah.currentTime = 0
+      fah.play()
+    }
+    if (e.key === '1') {
+      spooky.currentTime = 0
+      spooky.play()
+    }
   }
-  if (e.key === 'e'){
-    moon.currentTime= 0
-    moon.play()
-  }
-     if (e.key === 'r'){
-    moon2.currentTime= 0
-    moon2.play()
-  }
-     if (e.key === 's'){
-    sus.currentTime= 0
-    sus.play()
-  }
-      if (e.key === 't'){
-    glimmer.currentTime= 0
-    glimmer.play()
-  }
-     if (e.key === 'f'){
-    fah.currentTime= 0
-    fah.play()
-      }
-  }
-  
+
   nn.on('keydown', play)
   nn.on('keydown', fah_text)
   nn.on('keydown', au)
-  nn.on('keydown', skeleton1)
-  nn.on('keydown', skeleton1)
-  nn.on('keydown', skeleton2)
-
+  nn.on('keydown', show_skeleton)
 </script>
