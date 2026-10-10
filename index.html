@@ -5,7 +5,7 @@
   let base = 'https://storage.googleapis.com/cdn.patatap.com/'
 
   nn.get('body')
-    .css('background', "green")
+    .css('background', 'green')
 
   clay = nn.create('audio')
     .addTo('body')
@@ -53,11 +53,16 @@
     .set('src', 'fah.mp3')
     .set('style', 'display:none')
   
-  function text(e){
+  let fah_null = null
+  let current = null
+  
+  function fah_text (e){
     if (e.key === 'f'){
+    if (fah_null) fah_null.remove() 
+     
     let x = nn.random(nn.width)
     let y = nn.random(nn.height)
-    nn.create('h1')
+    fall_null = nn.create('h1')
       .content('FAH')
       .addTo('body')
       .position(x, y)
@@ -65,19 +70,39 @@
     }
   }
   
-  function text(e){
+  function au(e){
     if (e.key === 's'){
-    let x = nn.random(nn.width)
-    let y = nn.random(nn.height)
-    nn.create('img')
-      .set('src, sus cat.jpg')
+    if (current) current.remove() 
+      
+    let xr = nn.random(nn.width)
+    let yr = nn.random(nn.height)
+    current = nn.create('img')
+      .set('src', 'amongus.png')
       .addTo('body')
-      .position(x, y)
+      .position(xr, yr)
       .set('width', 200)
-      .css('user-select', 'none')
     }
   }
   
+  skeleton1 = nn.create('img')
+      .set('src', 'skeleton1.png')
+      .addTo('body')
+      .position(x, y)
+      .set('style', 'width: 10px;')
+  
+  function skeleton1 (e){
+    if (e.key === '1'){
+    if (current) current.remove() 
+      
+    let xr = nn.random(nn.width)
+    let yr = nn.random(nn.height)
+    current = nn.create('img')
+      .set('src', 'skeleton1')
+      .addTo('body')
+      .position(xr, yr)
+      .set('width', 200)
+    }
+  }
   
   let files = [
     'bubbles.mp3',
@@ -127,7 +152,7 @@
     moon2.currentTime= 0
     moon2.play()
   }
-     if (e.key === '1'){
+     if (e.key === 's'){
     sus.currentTime= 0
     sus.play()
   }
@@ -142,5 +167,6 @@
   }
   
   nn.on('keydown', play)
-  nn.on('keydown', text)
+  nn.on('keydown', fah_text)
+  nn.on('keydown', au)
 </script>
