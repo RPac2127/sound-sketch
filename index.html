@@ -53,16 +53,14 @@
     .set('src', 'fah.mp3')
     .set('style', 'display:none')
   
-  let fah_null = null
   let current = null
   
   function fah_text (e){
     if (e.key === 'f'){
-    if (fah_null) fah_null.remove() 
      
     let x = nn.random(nn.width)
     let y = nn.random(nn.height)
-    fall_null = nn.create('h1')
+     nn.create('h1')
       .content('FAH')
       .addTo('body')
       .position(x, y)
@@ -84,25 +82,38 @@
     }
   }
   
-  skeleton1 = nn.create('img')
-      .set('src', 'skeleton1.png')
-      .addTo('body')
-      .position(x, y)
-      .set('style', 'width: 10px;')
+
   
   function skeleton1 (e){
     if (e.key === '1'){
-    if (current) current.remove() 
-      
-    let xr = nn.random(nn.width)
-    let yr = nn.random(nn.height)
-    current = nn.create('img')
+    let xs1 = nn.random(nn.width)
+    let ys1 = nn.random(nn.height)
+    nn.create('img')
       .set('src', 'skeleton1')
       .addTo('body')
-      .position(xr, yr)
+      .position(xs1, ys1)
       .set('width', 200)
     }
   }
+  
+   nn.create('img')
+      .set('src', 'skeleton1')
+      .addTo('body')
+      .position(xs1, ys1)
+      .set('width', 200)
+  
+   function skeleton2 (e){
+    if (e.key === '2'){
+    let xs2 = nn.random(nn.width)
+    let ys2 = nn.random(nn.height)
+    nn.create('img')
+      .set('src', 'skeleton2')
+      .addTo('body')
+      .position(xs2, ys2)
+      .set('width', 200)
+    }
+  }
+  
   
   let files = [
     'bubbles.mp3',
@@ -169,4 +180,8 @@
   nn.on('keydown', play)
   nn.on('keydown', fah_text)
   nn.on('keydown', au)
+  nn.on('keydown', skeleton1)
+  nn.on('keydown', skeleton1)
+  nn.on('keydown', skeleton2)
+
 </script>
